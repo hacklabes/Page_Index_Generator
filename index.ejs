@@ -19,13 +19,13 @@
     <h1> HackNights 2016 @ F-Lab</h2>
     <% for(var user in urls){ %>
         <div class="row" style="text-align: center;">
-                <h2> <%= user %> </h2>
+                <h2><a href="http://<%= user %>.flab.space/"><%= user %></a></h2>
                 <% urls[user].forEach(function(url) { -%>
                     <% var sketchName = url.split("/").slice(1).join("/"); %>
                     <div class="three columns">
                         <a href="http://<%= url %>">
-                                <strong><%= sketchName %></strong>
-                                <img class="value-img" src="http://<%=url %>/index.html.png" width="100%">
+                                <strong><%= sketchName.replace("/"," ") %></strong>
+                                <img class="value-img" src="http://<%=url %>index.html.png" width="100%">
                             </a>
                     </div>
                 <% }) -%>
